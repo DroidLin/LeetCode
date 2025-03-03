@@ -39,7 +39,7 @@
  * 注意这五个元素可以任意顺序返回。
  * 你在返回的 k 个元素之外留下了什么并不重要（因此它们并不计入评测）。
  */
-private class Solution27 {
+class Solution27 {
     fun removeElement(nums: IntArray, `val`: Int): Int {
         val newCopy = nums.copyOf()
         var i = 0

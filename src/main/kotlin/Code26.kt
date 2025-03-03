@@ -35,6 +35,19 @@
  */
 class Solution26 {
     fun removeDuplicates(nums: IntArray): Int {
-
+        val newCopy = nums.copyOf()
+        var i = 0
+        for (index in newCopy.indices) {
+            if (i == 0 || nums[i - 1] != newCopy[index]) {
+                nums[i++] = newCopy[index]
+            }
+        }
+        return i
     }
+}
+
+fun main() {
+    val nums = intArrayOf(0,0,1,1,1,2,2,3,3,4)
+    val k = Solution26().removeDuplicates(nums)
+    println("nums: ${nums.contentToString()}, k: ${k}.")
 }
