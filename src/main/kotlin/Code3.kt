@@ -1,3 +1,5 @@
+import kotlin.math.max
+
 /**
  * 给定一个字符串 s ，请你找出其中不含有重复字符的 最长 子串 的长度。
  *
@@ -28,14 +30,24 @@
  */
 class Solution3 {
     fun lengthOfLongestSubstring(s: String): Int {
+        if (s.isEmpty()) return 0
         val hashSet = hashSetOf<Char>()
         var left = 0
-        var right = 0
-
-    }
-
-    private fun containsDuplicateChar(s: String, start: Int, end: Int): Boolean {
-        for (index in start until end) {
+        var right = 1
+        var maxLength = 1
+        hashSet.add(s[left])
+        while (left in 0..right && right < s.length) {
+            while (hashSet.contains(s[right])) {
+                hashSet.remove(s[left++])
+            }
+            hashSet.add(s[right++])
+            maxLength = max(maxLength, right - left)
         }
+        return maxLength
     }
+}
+
+fun main() {
+    val maxLength = Solution3().lengthOfLongestSubstring("pwwkew")
+    println("maxLength: ${maxLength}")
 }
