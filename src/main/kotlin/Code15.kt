@@ -57,7 +57,6 @@ class Solution15 {
 //    }
 
     fun threeSum(nums: IntArray): List<List<Int>> {
-
         nums.sort()
         val ansList = mutableListOf<List<Int>>()
         for (index in nums.indices) {
