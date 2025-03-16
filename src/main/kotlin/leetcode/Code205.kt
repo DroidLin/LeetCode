@@ -30,19 +30,28 @@ package leetcode
  * s 和 t 由任意有效的 ASCII 字符组成
  */
 class Solution205 {
+//    fun isIsomorphic(s: String, t: String): Boolean {
+//        val sMap = hashMapOf<Char, Char>()
+//        val tMap = hashMapOf<Char, Char>()
+//        for (index in s.indices) {
+//            val sChar = s[index]
+//            val tChar = t[index]
+//            if ((sMap.containsKey(sChar) && sMap[sChar] != tChar) || (tMap.containsKey(tChar) && tMap[tChar] != sChar)) {
+//                return false
+//            }
+//            sMap[sChar] = tChar
+//            tMap[tChar] = sChar
+//        }
+//        return true
+//    }
+
     fun isIsomorphic(s: String, t: String): Boolean {
-        val sMap = hashMapOf<Char, Char>()
-        val tMap = hashMapOf<Char, Char>()
         for (index in s.indices) {
-            val sChar = s[index]
-            val tChar = t[index]
-            if ((sMap.containsKey(sChar) && sMap[sChar] != tChar) || (tMap.containsKey(tChar) && tMap[tChar] != sChar)) {
+            if (s.indexOf(s[index]) != t.indexOf(t[index])) {
                 return false
             }
-            sMap[sChar] = tChar
-            tMap[tChar] = sChar
         }
-        return true
+        return true;
     }
 }
 

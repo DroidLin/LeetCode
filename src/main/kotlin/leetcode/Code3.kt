@@ -31,19 +31,34 @@ import kotlin.math.max
  * s 由英文字母、数字、符号和空格组成
  */
 class Solution3 {
+//    fun lengthOfLongestSubstring(s: String): Int {
+//        if (s.isEmpty()) return 0
+//        val hashSet = hashSetOf<Char>()
+//        var left = 0
+//        var right = 1
+//        var maxLength = 1
+//        hashSet.add(s[left])
+//        while (left in 0..right && right < s.length) {
+//            while (hashSet.contains(s[right])) {
+//                hashSet.remove(s[left++])
+//            }
+//            hashSet.add(s[right++])
+//            maxLength = max(maxLength, right - left)
+//        }
+//        return maxLength
+//    }
+
     fun lengthOfLongestSubstring(s: String): Int {
         if (s.isEmpty()) return 0
         val hashSet = hashSetOf<Char>()
         var left = 0
-        var right = 1
         var maxLength = 1
-        hashSet.add(s[left])
-        while (left in 0..right && right < s.length) {
-            while (hashSet.contains(s[right])) {
+        for (index in s.indices) {
+            while (hashSet.contains(s[index])) {
                 hashSet.remove(s[left++])
             }
-            hashSet.add(s[right++])
-            maxLength = max(maxLength, right - left)
+            hashSet.add(s[index])
+            maxLength = max(maxLength, hashSet.size)
         }
         return maxLength
     }

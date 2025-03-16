@@ -37,6 +37,9 @@ class Solution45 {
         System.out.println("steps: " + steps);
     }
 
+    public static void mainFunction(int[] nums) {
+    }
+
     public int jump(int[] nums) {
         int end = 0;
         int maxPosition = 0;
