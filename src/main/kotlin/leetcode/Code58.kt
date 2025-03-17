@@ -46,13 +46,13 @@ class Solution58 {
                 }
                 index2++
             }
-            maxLength = max(maxLength, index + 1)
+            maxLength = max(maxLength, index2)
         }
         return maxLength
     }
 }
 
 fun main() {
-    val length =  Solution58().lengthOfLastWord("  abc  ")
+    val length =  Solution58().lengthOfLastWord("abcd")
     println("length = $length")
 }

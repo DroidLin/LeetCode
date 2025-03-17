@@ -35,7 +35,7 @@ package leetcode
  * 你可以使用空间复杂度为 O(1) 的 原地 算法解决这个问题吗？
  */
 class Solution189 {
-    //    fun rotate(nums: IntArray, k: Int): Unit {
+//    fun rotate(nums: IntArray, k: Int): Unit {
 //        if (k == nums.size) return
 //        val iteration = if (k < nums.size) k else k % nums.size
 //        val newCopy = nums.copyOf()

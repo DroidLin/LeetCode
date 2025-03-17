@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class QuickSort {
 
     public static void main(String[] args) {
-        int[] numbers = new int[]{0, 2, 1, 3, 5};
+        int[] numbers = new int[]{5, 4, 2, 3, 1};
         int[] newNumbers = new QuickSort().quickSort(numbers, 0, numbers.length - 1);
         System.out.println(Arrays.toString(newNumbers));
     }

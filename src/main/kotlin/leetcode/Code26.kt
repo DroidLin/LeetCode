@@ -36,12 +36,21 @@ package leetcode
  * 解释：函数应该返回新的长度 5 ， 并且原数组 nums 的前五个元素被修改为 0, 1, 2, 3, 4 。不需要考虑数组中超出新长度后面的元素。
  */
 class Solution26 {
+//    fun removeDuplicates(nums: IntArray): Int {
+//        val newCopy = nums.copyOf()
+//        var i = 0
+//        for (index in newCopy.indices) {
+//            if (i == 0 || nums[i - 1] != newCopy[index]) {
+//                nums[i++] = newCopy[index]
+//            }
+//        }
+//        return i
+//    }
     fun removeDuplicates(nums: IntArray): Int {
-        val newCopy = nums.copyOf()
         var i = 0
-        for (index in newCopy.indices) {
-            if (i == 0 || nums[i - 1] != newCopy[index]) {
-                nums[i++] = newCopy[index]
+        for (index in 1 until nums.size) {
+            if (i == 0 || nums[i - 1] != nums[index]) {
+                nums[i++] = nums[index]
             }
         }
         return i

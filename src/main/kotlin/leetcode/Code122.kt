@@ -57,8 +57,6 @@ class Solution122 {
                 profitRight++
             } else if (profitRight + 1 >= prices.size) {
                 maxProfit += (priceRight - priceLeft)
-                profitLeft = profitRight
-                profitRight += 1
                 break
             }
         }
