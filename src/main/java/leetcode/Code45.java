@@ -32,12 +32,9 @@ package leetcode;
 class Solution45 {
 
     public static void main(String[] args) {
-        int[] nums = new int[]{2,2,0,1,4};
+        int[] nums = new int[]{2,0,1,0,4};
         int steps = new Solution45().jump(nums);
         System.out.println("steps: " + steps);
-    }
-
-    public static void mainFunction(int[] nums) {
     }
 
     public int jump(int[] nums) {
@@ -51,6 +48,9 @@ class Solution45 {
                 steps++;
             }
         }
-        return steps;
+        if (maxPosition >= nums.length - 1) {
+            return steps;
+        }
+        return 0;
     }
 }
